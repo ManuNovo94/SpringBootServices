@@ -34,6 +34,25 @@ public class ProductoController {
 	public Producto detail(@PathVariable Long id) {
 		Producto producto = productoService.findByiD(id);
 		producto.setPort(Integer.parseInt(env.getProperty("local.server.port"))); //asigna el puerto donde es publicado
+		/*
+		 * boolean ok=false;//simular fallo
+		 * 
+		 * if (!ok) {
+		 * 
+		 * throw new RuntimeException("ERROR, NO SE CARGA PRODUCTO");
+		 * 
+		 * }
+		 */
+		/*
+		 * try { //añadimos timeOut para comprobar que se realiza el camino alternativo
+		 * y despues cambiamos la configuración Thread.sleep(2000L);//si supera los
+		 * tiempos de configuración lanzará camino alternativo } catch
+		 * (InterruptedException e) {
+		 * 
+		 * e.printStackTrace(); }
+		 */
+		
+		
 		return producto;
 	}
 }
